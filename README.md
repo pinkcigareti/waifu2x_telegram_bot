@@ -5,4 +5,4 @@ Change Telegram token to yours and specify your path in output image
 
 Run with python3 bot.py
 
-[Link](https://t.me/waifu_2x_bot) to bot
+[Link](https://t.me/waifu_2x_bot) to bot"# waifu2xheroku" 
