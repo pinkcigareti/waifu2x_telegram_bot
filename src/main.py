@@ -30,7 +30,7 @@ def handle_docs_photo(message):
                 files={
                     'image': downloaded_file,
                 },
-                headers={'api-key': 'b76de89d-a5d3-4244-a345-0edbefe6dfc6'}
+                headers={'api-key': 'YOUR_API_KEY'}
             )
             data1 = json.dumps(r.json())
             data2 = json.loads(data1)
