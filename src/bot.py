@@ -8,13 +8,12 @@ bot = telebot.TeleBot("TELEGRAM_TOKEN")
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo \n Command shortcuts: /help")
+    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo")
     pass
 
 @bot.message_handler(commands=['help'])
 def handle_help(message):
-    bot.send_message(message.chat.id, "Waifu2x Telegram Bot"
-                                      "Command shortcuts: /help")
+    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo")
 @bot.message_handler(content_types=['document'])
 def handle_docs_photo(message):
     try:
@@ -34,13 +33,12 @@ def handle_docs_photo(message):
             )
             data1 = json.dumps(r.json())
             data2 = json.loads(data1)
-            print(data2['output_url'])
         bot.reply_to(message, "Please wait")
         url = data2['output_url']
-        f = open('../output.png', 'wb')
+        f = open('output.png', 'wb')
         f.write(urllib.request.urlopen(url).read())
         f.close()
-        doc = open('../output.png', 'rb')
+        doc = open('output.png', 'rb')
 
         bot.send_document(message.chat.id, doc)
         bot.send_message(message.chat.id, "Done. Enjoy")
