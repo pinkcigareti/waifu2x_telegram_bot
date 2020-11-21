@@ -6,15 +6,10 @@ import urllib
 bot = telebot.TeleBot("TELEGRAM_TOKEN")
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'help'])
 def handle_start(message):
     bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo")
     pass
-
-
-@bot.message_handler(commands=['help'])
-def handle_help(message):
-    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo")
 
 
 @bot.message_handler(content_types=['photo'])
@@ -80,4 +75,3 @@ def handle_docs(message):
 
 
 bot.polling()
-
