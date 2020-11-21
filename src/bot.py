@@ -8,7 +8,8 @@ bot = telebot.TeleBot("TELEGRAM_TOKEN")
 
 @bot.message_handler(commands=['start', 'help'])
 def handle_start(message):
-    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo")
+    bot.send_message(message.chat.id, "Waifu2x Telegram Bot \n \n How to use: send photo (highly recommended sending "
+                                      "without compression for better results)")
     pass
 
 
